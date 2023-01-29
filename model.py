@@ -110,7 +110,7 @@ class specDecoder(nn.Module):
 
 
 # define the LightningModule
-class LitAutoEncoder(pl.LightningModule):
+class MusicGenerator(pl.LightningModule):
     def __init__(self, lr, batch_size, train_dir, val_dir, sampling_rate = 22050):
         super().__init__()
         self.encoder = specEncoder()

@@ -1,4 +1,4 @@
-from model import LitAutoEncoder
+from model import MusicGenerator
 import pytorch_lightning as pl
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers.tensorboard import TensorBoardLogger
@@ -9,7 +9,7 @@ import yaml
 with open('config.yaml', 'r') as stream:
     config = yaml.safe_load(stream)
 
-autoencoder = LitAutoEncoder(train_dir= config['train_dir'], val_dir=config['train_dir'], lr = config['learning_rate'], batch_size = config['batch_size'])
+musicGenerator = MusicGenerator(train_dir= config['train_dir'], val_dir=config['train_dir'], lr = config['learning_rate'], batch_size = config['batch_size'])
 
 logger = TensorBoardLogger("tensorboard", name="decoder_with_attention")
 
@@ -29,4 +29,4 @@ trainer = pl.Trainer(
 )
 
 
-trainer.fit(model=autoencoder)
+trainer.fit(model=musicGenerator)
