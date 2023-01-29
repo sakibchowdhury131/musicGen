@@ -1,0 +1,6 @@
+batch_size: 8                 ## experiment with it
+learning_rate: 0.0001         ## experiment with it
+train_dir: ./data/train       ## can be changed
+val_dir: ./data/val           ## can be changed
+limit_train_batches: 10000    ## keep as high is possible
+max_epochs: 200             
